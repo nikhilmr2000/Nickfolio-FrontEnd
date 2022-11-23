@@ -1,0 +1,94 @@
+<div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About NickFolio</h4>
+          <p class="text-muted">NickFolio is a portal designed to easily make a design of your resume and update with respect to the changes for free.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Features</h4>
+          <ul class="list-unstyled">
+            <li><a href="/" class="text-white" style=text-decoration:none;>* Home</a></li>
+            <li><a href="/addPortfolio" class="text-white" style=text-decoration:none;>* Add or update PortFolio</a></li>
+            <li><a href="/portfolio" class="text-white" style=text-decoration:none;>* View your PortFolio</a></li>
+            <li><a href="/logout" class="text-white" style=text-decoration:none;>* Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Dashboard</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Hello {{user.name}}</h1>
+        <p class="lead text-muted">NickFolio is the leading portal for designing custom portfolio for free addition,updation and portfolio link generation.</p>
+        <p>
+          <a href="/addPortfolio" class="btn btn-primary my-2">Add/Update PortFolio</a>
+          <a href="/portfolio" class="btn btn-primary my-2" style=margin-left:20px;>View your PortFolio</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="#"/>
+            <div class="card-body">
+              <p class="card-text">Theme1</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Add/Update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card shadow-sm">
+              <img src="#"/>
+              <div class="card-body">
+                <p class="card-text">Theme2</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Add/Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="#"/>
+              <div class="card-body">
+                <p class="card-text">Theme3</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Add/Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</main>
+

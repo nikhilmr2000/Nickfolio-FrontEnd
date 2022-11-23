@@ -1,0 +1,173 @@
+<div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About NickFolio</h4>
+          <p class="text-muted">NickFolio is a portal designed to easily make a design of your resume and update with respect to the changes for free.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Features</h4>
+          <ul class="list-unstyled">
+            <li><a href="/" class="text-white" style=text-decoration:none;>* Home</a></li>
+            <li><a href="/addPortfolio" class="text-white" style=text-decoration:none;>* Add or update PortFolio</a></li>
+            <li><a href="/portfolio" class="text-white" style=text-decoration:none;>* View your PortFolio</a></li>
+            <li><a href="/logout" class="text-white" style=text-decoration:none;>* Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Add or update PortFolio</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <br/><br/><br/>
+<div class="form">
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputEmail3" [value]="user.name"  readonly>
+        </div>
+      </div>
+
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label" >Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" [value]="user.email" readonly>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Tag</label>
+        <div class="col-sm-10" *ngIf="!present">
+          <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="portfolioDetails.tag" >
+        </div>
+        <div class="col-sm-10" *ngIf="present">
+          <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="savedPortFolio.tag" >
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10" *ngIf="!present">
+          <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="portfolioDetails.description">
+        </div>
+        <div class="col-sm-10" *ngIf="present">
+          <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="savedPortFolio.description" >
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10" *ngIf="!present">
+          <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="portfolioDetails.contact">
+        </div>
+        <div class="col-sm-10" *ngIf="present">
+          <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="savedPortFolio.contact" >
+        </div>
+    </div>
+
+    <label for="education">Education Details :: </label>
+    <br/>
+    <br/>
+    <div class="new" >
+      <div class="education" id="education" *ngFor="let educ of this.count" >
+          <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Name of the Institute</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="education[educ].instituteName">
+              </div>
+          </div>
+          <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Branch Of Study</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="education[educ].branch">
+              </div>
+          </div>
+          <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Total Grade</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="education[educ].grade">
+              </div>
+          </div>
+          <div class="addImg"><img src="assets/subtract.png"  (click)="deleteButton(educ)"/></div>
+      </div>
+      <div class="addImg"><img src="assets/add.png" height=50 width=50 (click)="onClickButton()"/></div>
+      </div>
+    <br/>
+    
+    <label for="education">Projects :: </label>
+    <br/>
+    <br/>
+    <div class="education" id="education" *ngFor="let educ of this.count1">
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Name of the Project</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="project[educ].name">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="project[educ].about">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Technology Used</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="project[educ].stack">
+            </div>
+        </div>
+        <div class="addImg"><img src="assets/subtract.png" (click)="deleteButton1(educ)" /></div>
+    </div>
+    <div class="addImg"><img src="assets/add.png" height=50 width=50 (click)="onClickButton1()"/></div>
+    <br/>
+    
+    <label for="education">Achievements :: </label>
+    <br/>
+    <br/>
+    <div class="education" id="education" *ngFor="let educ of this.count2">
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Name of the Event/Competition</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="achievements[educ].name">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Performance</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="achievements[educ].performance">
+            </div>
+        </div>
+        
+        <div class="addImg"><img src="assets/subtract.png" (click)="deleteButton2(educ)" /></div>
+    </div>
+    <div class="addImg"><img src="assets/add.png" height=50 width=50 (click)="onClickButton2()"/></div>
+    <br/>
+
+    <label for="education">Skills :: </label>
+    <br/>
+    <br/>
+    <div class="education" id="education" *ngFor="let educ of this.count3">
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Enter your Skill {{educ+1}}</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" [(ngModel)]="skills[educ].name">
+            </div>
+        </div>
+        <div class="addImg"><img src="assets/subtract.png" (click)="deleteButton3(educ)" /></div>
+    </div>
+    <div class="addImg"><img src="assets/add.png" height=50 width=50 (click)="onClickButton3()"/></div>
+    <br/>
+      <button type="button" class="btn btn-info" (click)="onClick()" *ngIf="!present">Add PortFolio</button>
+      <button type="button" class="btn btn-info" (click)="onUpdate()" *ngIf="present">Update PortFolio</button>
+</div>
+

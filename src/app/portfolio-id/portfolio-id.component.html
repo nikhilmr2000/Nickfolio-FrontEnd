@@ -1,0 +1,180 @@
+<div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>My Portfolio</strong>
+      </a>
+    </div>
+  </div>
+  
+    
+  <body class="d-flex h-100 text-center text-bg-dark">
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    
+      <main class="px-3">
+        <h1>Hello, My Name is {{portfolio.name}}</h1>
+        <p class="lead" style=text-align:Center;>{{portfolio.tag}}</p>
+        <p class="lead" style=font-size:25px;>{{portfolio.description}}</p>
+      </main>
+    </div> 
+</body>
+<br/><br/>
+<div class="nikhil">
+    <br>
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Education Details</h2>
+                    <!--<p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                    --> 
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngFor="let education of portfolio.studies">
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Name : {{education.instituteName}}</h5>
+                        <br/>
+                        <p>Branch : {{education.branch}}</p>
+                        <p>Grade : {{education.grade}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+             
+        </div>
+    </div>
+    <br>
+</section>
+<br/>
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="row" >
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Projects</h2>
+                    <!--<p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                    --> 
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngFor="let projects of portfolio.projects">
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Name : {{projects.name}}</h5>
+                        <br/>
+                        <p>About : {{projects.about}}</p>
+                        <p>Stack : {{projects.stack}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+             
+        </div>
+    </div>
+    <br>
+</section>
+<br/>
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Achievements</h2>
+                    <!--<p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                    --> 
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngFor="let ach of portfolio.achievements">
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Name : {{ach.name}}</h5>
+                        <br/>
+                        <p>Performance : {{ach.performance}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+             
+        </div>
+    </div>
+    <br>
+</section>
+<br/>
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Skills</h2>
+                    <!--<p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                    --> 
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngFor="let skill of portfolio.skills">
+            <!-- feaure box -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="feature-box-1">
+                    <div class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Skill 1 : {{skill.name}}</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+             
+        </div>
+    </div>
+<br>
+</section>
+</div>
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left" style="background:black;">
+  
+        <br/>
+
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+  
+          <!-- Content -->
+          <h5 style="color:white;"> Email : {{portfolio.email}}</h5>
+          <h5 style="color:white;">Contact: {{portfolio.contact}}</h5>
+  
+        </div>
+
+        </div>
+        </div>
+   
+  
+  </footer>

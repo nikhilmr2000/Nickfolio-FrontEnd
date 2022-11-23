@@ -1,0 +1,13 @@
+.form{
+    height:400px;
+    width:1000px;
+}
+
+label{
+    align-items:center;
+}
+
+button{
+    height:50px;
+    width:90px;
+}
