@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   onDashboardComponent(){
     this.service.getDashboardService().subscribe((data)=>{
       this.user=data;
-      console.log(this.user);
+      // console.log(this.user);
     });
   }
 
