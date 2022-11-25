@@ -29,8 +29,8 @@ export class RegisterComponent implements OnInit {
 
   onRegister(){
     if(this.register.password==this.newPass){
-      console.log(this.register.password);
-      console.log(this.newPass);
+     // console.log(this.register.password);
+     // console.log(this.newPass);
       this.service.registerUser(this.register).subscribe((data)=>{
         this.router.navigateByUrl("/login");
       })
