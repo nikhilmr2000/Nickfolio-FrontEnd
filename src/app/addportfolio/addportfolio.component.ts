@@ -115,7 +115,7 @@ export class AddportfolioComponent implements OnInit {
       this.count[i]=i;
     }
 
-    console.log(this.education);
+   // console.log(this.education);
   }
 
   deleteButton(educ:number){
@@ -125,8 +125,8 @@ export class AddportfolioComponent implements OnInit {
       this.education.splice(educ,1);
       this.count.length=this.total;
       this.education.length=this.count.length;
-      console.log(this.education.length);
-      console.log(this.education);
+     // console.log(this.education.length);
+      //console.log(this.education);
     }
   }
 
@@ -144,8 +144,8 @@ export class AddportfolioComponent implements OnInit {
       this.count1[i]=i;
     }
 
-    console.log(this.total1);
-    console.log(this.project);
+  //  console.log(this.total1);
+   // console.log(this.project);
   }
 
   deleteButton1(educ:number){
@@ -156,8 +156,8 @@ export class AddportfolioComponent implements OnInit {
       this.project.splice(educ,1);
       this.count1.length=this.total1;
       this.project.length=this.count1.length;
-      console.log(this.project.length);
-      console.log(this.project);
+    //  console.log(this.project.length);
+    //  console.log(this.project);
     }
   }
 
@@ -175,8 +175,8 @@ export class AddportfolioComponent implements OnInit {
       this.count2[i]=i;
     }
 
-    console.log(this.total2);
-    console.log(this.achievements);
+   // console.log(this.total2);
+   // console.log(this.achievements);
   }
 
   deleteButton2(educ:number){
@@ -187,8 +187,8 @@ export class AddportfolioComponent implements OnInit {
       this.achievements.splice(educ,1);
       this.count2.length=this.total2;
       this.achievements.length=this.count2.length;
-      console.log("Array: "+ this.count2);
-      console.log(this.achievements);
+    //  console.log("Array: "+ this.count2);
+    //  console.log(this.achievements);
     }
   }
 
@@ -206,8 +206,8 @@ export class AddportfolioComponent implements OnInit {
       this.count3[i]=i;
     }
 
-    console.log(this.total3);
-    console.log(this.skills);
+   // console.log(this.total3);
+   // console.log(this.skills);
   }
 
   deleteButton3(educ:number){
@@ -218,8 +218,8 @@ export class AddportfolioComponent implements OnInit {
       this.skills.splice(educ,1);
       this.count3.length=this.total3;
       this.skills.length=this.count3.length;
-      console.log("Array: "+ this.count3);
-      console.log(this.skills);
+     // console.log("Array: "+ this.count3);
+     // console.log(this.skills);
     }
   }
 
@@ -230,7 +230,7 @@ export class AddportfolioComponent implements OnInit {
     this.portfolioDetails.achievements=this.achievements;
     this.portfolioDetails.skills=this.skills;
     this.service.addPortFolioDetails(this.portfolioDetails).subscribe((data)=>{
-        console.log(data);
+      //  console.log(data);
         this.router.navigateByUrl("/portfolio");
     });
   }
@@ -241,7 +241,7 @@ export class AddportfolioComponent implements OnInit {
     this.savedPortFolio.achievements=this.achievements;
     this.savedPortFolio.skills=this.skills;
     this.service.updatePortFolioDetails(this.savedPortFolio).subscribe((data)=>{
-      console.log(data);
+     // console.log(data);
       this.router.navigateByUrl("/portfolio");
     });
   }
@@ -258,7 +258,7 @@ export class AddportfolioComponent implements OnInit {
       this.presentornot=data;
       if(this.presentornot.email!=null){
         this.present=true;
-        console.log("Present "+this.present);
+      //  console.log("Present "+this.present);
       }
     });
   }
